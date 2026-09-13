@@ -1,0 +1,167 @@
+%-------------------------
+% Resume in LaTeX
+% Based on the widely-used "Jake's Resume" template (Overleaf), single column, ATS-friendly
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.9in}
+\addtolength{\textheight}{2.0in}
+\setlength{\footskip}{4.5pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure PDF is machine readable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=0pt, topsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tejas Jain} \\ \vspace{1pt}
+    \footnotesize +91 9149385766 $|$ \href{mailto:aispace101@gmail.com}{aispace101@gmail.com} $|$
+    \href{https://www.linkedin.com/in/tejas-jain-spacefighter/}{LinkedIn} $|$
+    \href{https://github.com/Space-Fighter}{GitHub} $|$
+    \href{https://leetcode.com/u/Space-Fighter/}{LeetCode} $|$
+    \href{https://codolio.com/profile/Space-Fighter}{Codolio}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Graphic Era Deemed to be University}{Dehradun, Uttarakhand}
+      {B.Tech. in Computer Science Engineering; CGPA: 9.54/10}{2025 -- 2029}
+    \resumeSubheading
+      {DPSG Dehradun, Selaqui}{Dehradun, Uttarakhand}
+      {Class 12 (CBSE), PCM -- 96.20\%}{2025}
+    \resumeSubheading
+      {Doon International School}{Dehradun, Uttarakhand}
+      {Class 10 (CBSE) -- 98.16\%}{2023}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, TypeScript/JavaScript, C, C++, SQL} \\
+     \textbf{Backend \& APIs}{: FastAPI, Express.js (Node), Prisma ORM, REST, JWT/OAuth authentication, Webhooks} \\
+     \textbf{Frontend}{: React, Vite, Tailwind CSS, shadcn/ui} \\
+     \textbf{Data \& AI}{: PostgreSQL, pgvector (RAG), Anthropic/OpenAI APIs, LLM agent pipelines} \\
+     \textbf{Computer Vision}{: OpenCV, YOLO, CNNs, Object Detection, Semantic Segmentation, Image Classification, PyTorch, TensorFlow/Keras} \\
+     \textbf{Infra \& Tools}{: Docker, GitHub Actions (CI/CD), Nginx, Git, Linux}
+    }}
+ \end{itemize}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{AI Revenue Recovery} $|$ \emph{Python, FastAPI, React, PostgreSQL, pgvector} $|$ \href{https://github.com/Space-Fighter/AI-Revenue-Recovery}{GitHub}}{Razorpay AI Buildathon}
+          \resumeItemListStart
+            \resumeItem{\textbf{Problem:} Merchants silently lose revenue to failed payments, abandoned checkouts, and overdue invoices, with no automated way to diagnose why or safely win it back.}
+            \resumeItem{\textbf{Solution:} Built a 4-agent LLM pipeline (detect $\rightarrow$ diagnose $\rightarrow$ recover $\rightarrow$ audit) that classifies failures into 9 root causes via a pgvector RAG + LLM diagnosis engine, then runs bounded recovery -- retry caps, human-approval gates, and a fraud-cluster detector that halts suspicious batches for review -- with every decision logged to an audit trail.}
+            \resumeItem{\textbf{Testing methods:} A 280+ test backend suite, plus a sandboxed Playground/Simulate mode -- an AI customer persona conversing live with the recovery AI agent, and a manual mode where a human tester role-plays the customer against the same recovery AI agent -- to validate agent behavior without touching real metrics.}
+            \resumeItem{\textbf{Results:} Recovered \textasciitilde19\% (Rs.~37.8K of Rs.~198.6K) of at-risk revenue on a 76-event seeded batch, shipped with a GitHub Actions CI/CD pipeline building and pushing Docker images on every merge.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Gymodoro} $|$ \emph{React, TypeScript, Express, Prisma, PostgreSQL} $|$ \href{https://gymodoro.com}{gymodoro.com} $|$ \href{https://github.com/Space-Fighter/Gymodoro}{GitHub}}{Personal Project}
+          \resumeItemListStart
+            \resumeItem{People working long desk sessions take their breaks by scrolling their phone, staying sedentary and returning less focused than before. Built Gymodoro, a fitness + productivity app that turns every work break into a short movement window instead.}
+            \resumeItem{\textbf{Features:} Pomodoro work/break timer, randomized break-time exercise suggestions with GIF/video/muscle-diagram guides, session analytics dashboard (focus time, calories burned, completion rate), JWT + Google OAuth authentication.}
+            \resumeItem{\textbf{Tech stack:} React 19, TypeScript, Tailwind CSS, Express, Prisma, PostgreSQL, Docker Compose, Nginx, Oracle Cloud, Certbot/Let's Encrypt.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Self-Driving Car} $|$ \emph{Python, OpenCV, YOLO, CNN, CARLA, Raspberry Pi}}{Personal Project}
+          \resumeItemListStart
+            \item[] \textbf{CARLA Simulator} $|$ \href{https://user-images.githubusercontent.com/63576756/135388850-3d1241d7-1122-446b-b17e-6589d3da7ca6.mp4}{Project Video} $|$ \href{https://github.com/Space-Fighter/Self-driving-Car-Project}{GitHub}
+              \begin{itemize}[leftmargin=0.2in, itemsep=0pt, topsep=1pt]
+                \resumeItem{\textbf{Problem:} Drive a car using only a camera -- no LiDAR or radar -- by fusing lane position, obstacles, and navigation cues into one real-time steering decision.}
+                \resumeItem{\textbf{Solution:} Used a pretrained segmentation model to detect drivable area and OpenCV to extract waypoint arrows for navigation; engineered a multi-modal steering fusion algorithm computing weighted angular offsets from road-mask centroids, waypoints, and YOLO-detected obstacle boxes to drive steering and throttle.}
+                \resumeItem{\textbf{Results:} Boosted inference 6--10$\times$ (3-4 to 20-40 FPS) by switching the detection backbone from SSD-MobileNet-v2 to YOLO, enabling smoother real-time autonomous driving in CARLA.}
+              \end{itemize}
+            \item[] \textbf{Raspberry Pi RC Car} $|$ \href{https://github.com/user-attachments/assets/c8a6b5bb-3bdb-41a5-be04-1f1975059fe4}{Project Video} $|$ \href{https://github.com/Space-Fighter/Raspberry-Pi-Self-Driving-Car-Project}{GitHub}
+              \begin{itemize}[leftmargin=0.2in, itemsep=0pt, topsep=1pt]
+                \resumeItem{\textbf{Problem:} Take the simulated self-driving pipeline off-screen and onto a physical car, constrained by a Raspberry Pi's limited compute and real motor hardware.}
+                \resumeItem{\textbf{Solution:} Collected driving data in a simulator, trained a Behavioral Cloning CNN on it, and deployed the model on a Raspberry Pi driving a differential-drive chassis (camera $\rightarrow$ CNN $\rightarrow$ steering angle $\rightarrow$ pigpio motor controller $\rightarrow$ per-wheel velocities); also built a servo-steering variant and a manual multi-key control mode (pynput) with incremental steering as a fallback.}
+                \resumeItem{\textbf{Results:} Got both autonomous and manual driving modes working on real hardware, and picked up hands-on intuition for PWM tuning, motor control, and the sim-to-real gap.}
+              \end{itemize}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+    \resumeItemListStart
+    \resumeItem{Qualified JEE Advanced (2025); admission offers from IIT Mandi (Integrated MBA, Data Science \& AI) and NIT Jamshedpur (B.Tech) via JEE Main. Ranked 3rd in school in Class 10 (2023) and Class 12 (2025) boards.}
+    \resumeItemListEnd
+
+\end{document}
